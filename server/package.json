@@ -1,0 +1,24 @@
+{
+  "name": "server-side",
+  "version": "1.0.0",
+  "description": "Server side for Reservation system",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MrAbeckon/Rezervacny-system-webapp.git"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "restAPI"
+  ],
+  "author": "Martin Albert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrAbeckon/Rezervacny-system-webapp/issues"
+  },
+  "homepage": "https://github.com/MrAbeckon/Rezervacny-system-webapp#readme"
+}
