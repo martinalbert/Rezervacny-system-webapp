@@ -1,8 +1,10 @@
 const UbytovanyRepo = require('../models/repositories/UbytovanyRepo');
 
-function createUser(req, res) {
+const createUser = function(req, res) {
   const user = req.body;
-  console.log('hello');
+  console.log("req-body", req.body);
+  console.log('attemping to create a user');
+    
   UbytovanyRepo.create(user)
     .then((newUser) => {
       res.json(newUser);
@@ -11,6 +13,7 @@ function createUser(req, res) {
         errors,
       });
     });
+  
 }
 
 module.exports = createUser;
