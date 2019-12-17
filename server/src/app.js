@@ -4,7 +4,6 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
 const ubytovanyRoutes = require('./routes/ubytovany');
 
 // middlewares
@@ -14,7 +13,7 @@ app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// Access Control Allow Origin 
+// Access Control Allow Origin
 // Basic Headers
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -26,6 +25,9 @@ app.use((req, res, next) => {
 	}
 	next();
 })
+app.get('/', function(req, res) {
+	res.status(200).send('Hello World!');
+});  
 
 // Connect the routes
 app.use('/ubytovany', ubytovanyRoutes);
