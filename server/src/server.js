@@ -1,16 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
-// package routes
 const http = require('http');
-// file routes
 const app = require('./app');
-
-// set the port
 const port = process.env.PORT || 3000;
 // create a server
 const server = http.createServer(app);
-// listen to specific port
-server.listen(port, (err) => {
-   console.log('server started on port: ' + port);
-});
+const models = require('./models');
+const eraseDBonSync = true;
+var db = mongoose.connection;
+
+models.connectDB()
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log("we're connected");
+    server.listen(port, (err) => {
+        console.log('server started on port: ' + port);
+    });
+})
