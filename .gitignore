@@ -98,7 +98,7 @@ dist
 # TernJS port file
 .tern-port
 # dependencies
-server/node_modules
+server/node_modules/*
 webClient/node_modules
 /.pnp
 .pnp.js
