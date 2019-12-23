@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
   datum_start: {
-    type: String,
-    // unique: true
+    type: Date,
+    // // unique: true
+    // min: new Date('YYYY/MM/DD')
   },
   cas_start: {
     type: String
@@ -17,16 +18,17 @@ const schema = new Schema({
   },
   ubytovany: {
     type: mongoose.Schema.Types.ObjectId, 
-    ref: 'Ubytovany'
+    ref: 'Ubytovany',
   },
   izba: {
-    type: Number
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Izba',
   },
   objednavka: {
-    type: Boolean
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Objednavka',
   }
-//   rezervacie, dokoncene_rezervacie, poradovniky
 });
 
-const Rezervacia = mongoose.model('Rezervácia', schema);
+const Rezervacia = mongoose.model('Rezervacia', schema);
 module.exports = Rezervacia;

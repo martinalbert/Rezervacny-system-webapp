@@ -1,6 +1,6 @@
-const Ubytovany = require('../ubytovany');
+const Budova = require('../budova');
 
-class UbytovanyRepo {
+class BudovaRepo {
 
   constructor(model) {
     this.model = model;
@@ -11,4 +11,4 @@ class UbytovanyRepo {
   }
 }
 
-module.exports = new UbytovanyRepo(Ubytovany);
+module.exports = new BudovaRepo(Budova);

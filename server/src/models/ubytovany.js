@@ -4,16 +4,21 @@ const Schema = mongoose.Schema;
 const schema = mongoose.Schema({
   email: {
     type: String,
-    unique: true
+    required: true,
+    unique: true,
+    match: /\w{3}\d{4}@vsb.cz/
   },
   meno: {
-    type: String
+    type: String,
+    required: true,
   },
   priezvisko: {
-    type: String
+    type: String,
+    required: true,
   },
   login: {
-    type: String
+    type: String,
+    match: /\w{3}\d{4}/
   },
   password: {
     type: String
@@ -31,17 +36,18 @@ const schema = mongoose.Schema({
   //   type: mongoose.Schema.Types.ObjectId, 
   //   ref: 'Preferencie',
   // },
-  rezervacie: {
+  rezervacie: [{
     type: mongoose.Schema.Types.ObjectId, 
     ref: 'Rezervacia'
-  }, 
-  dokoncene_rezervacie: {
+  }], 
+  dokoncene_rezervacie: [{
     type: mongoose.Schema.Types.ObjectId, 
-    ref: 'Rezervacia'
-  }, 
-  // poradovniky: {
-
-  // }
+    ref: 'Objednavka'
+  }], 
+  poradovniky: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Poradovnik'
+  }],
 });
 
 // - templates for pre & post function of scheme
@@ -56,5 +62,5 @@ const schema = mongoose.Schema({
 //   console.log('after next');
 // });
 
-const Ubytovany = mongoose.model('Ubytovaný', schema);
+const Ubytovany = mongoose.model('Ubytovany', schema);
 module.exports = Ubytovany;
