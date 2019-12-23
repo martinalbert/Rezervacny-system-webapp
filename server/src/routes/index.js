@@ -1,20 +1,19 @@
-import express from 'express';
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-import routes from './routes';
+const connectDB = () => {
+	console.log('attemping to connect to mongoose');
+	return mongoose.connect("mongodb+srv://dbAdmin:" + process.env.MONGO_ATLAS_PW + "@vis-cluster-vhczk.mongodb.net/Reservation_system?retryWrites=true&w=majority", 
+	{
+		useNewUrlParser: true,
+		useFindAndModify: false,
+		useCreateIndex: true,
+		useUnifiedTopology: true
+	});
+}
 
-mongoose.Promise = global.Promise;
+const Rezervacia = require('./rezervacia');
+const Ubytovany = require('./ubytovany');
+const models = {Rezervacia, Ubytovany};
 
-const app = express();
-
-app.use('/', routes);
-
-mongoose.connect('mongodb://localhost:27017/db')
-  .then(() => {
-    console.log('mongodb started.');
-    app.listen(8000, () => {
-      console.log('Server started on 8000');
-    });
-  }).catch(() => {
-    console.log('Mongodb connection failed.');
-  })
+module.exports.connectDB = connectDB;
+module.exports.models = models;
