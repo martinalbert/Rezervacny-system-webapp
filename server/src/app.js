@@ -4,14 +4,22 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const ubytovanyRoutes = require('./routes/ubytovany');
+
+const ubytovany_routes = require('./routes/ubytovany');
+const rezervacia_routes = require('./routes/rezervacia');
+const sampleData_routes = require('./routes/sampleData');
+const budova_routes = require('./routes/budova');
+const izba_routes = require('./routes/izba');
+const objednavka_routes = require('./routes/objednavka');
+const poradovnik_routes = require('./routes/poradovnik');
+const zamestnanec_routes = require('./routes/zamestnanec_internatov');
 
 // middlewares
 app.use(morgan('dev'));
 // SETTING FOLDER IMGS TO PUBLIC
-app.use('/uploads', express.static('uploads'));
+// app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 
 // Access Control Allow Origin
 // Basic Headers
@@ -30,5 +38,15 @@ app.get('/', function(req, res) {
 });  
 
 // Connect the routes
-app.use('/ubytovany', ubytovanyRoutes);
+app.use('/ubytovany', ubytovany_routes);
+app.use('/rezervacie', rezervacia_routes)
+app.use('/izby', izba_routes);
+app.use('/budovy', budova_routes);
+app.use('/objednavky', objednavka_routes);
+app.use('/poradovniky', poradovnik_routes);
+app.use('/zamestnanci', zamestnanec_routes);
+
+// create sample data
+app.use('/generate', sampleData_routes);
+
 module.exports = app;
