@@ -99,7 +99,7 @@ dist
 .tern-port
 # dependencies
 server/node_modules/*
-webClient/node_modules
+web_client/node_modules/*
 /.pnp
 .pnp.js
 
