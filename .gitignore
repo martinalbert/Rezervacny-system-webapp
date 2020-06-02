@@ -121,4 +121,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # nodemon constants
-server/nodemon.json
+nodemon.* 
