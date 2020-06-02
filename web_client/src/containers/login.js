@@ -12,7 +12,9 @@ class Login extends Component {
             email:'',
             password:''
         }
+        this.handleClick = this.handleClick.bind(this);
     }
+
     handleClick(event){
         var url = "http://localhost:3000/ubytovany/login/";
         var self = this;
@@ -25,8 +27,8 @@ class Login extends Component {
                 console.log(self.props);
                 
                 if(response.status === 200){
-                    console.log("Login successfull", response);
-                    var uploadScreen=[];
+                    console.log("Login successfull", "props:", self.props);
+                    // var uploadScreen=[];
                     // uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>);
 
                     self.props.callbackFromParent(response);
@@ -61,7 +63,7 @@ class Login extends Component {
                         onChange = {(event, newValue) => this.setState({ password: newValue })}
                     />
                     <br/>
-                    <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+                    <RaisedButton label="Submit" primary={true} style={style} onClick={this.handleClick}/>
                 </div>
             </MuiThemeProvider>
         );
