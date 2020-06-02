@@ -18,7 +18,7 @@ class Register extends Component {
     }
   }
   handleClick(event){
-    var url = "http://localhost:4000/ubytovany/signup";
+    var url = "http://localhost:3000/ubytovany/signup";
     console.log("values",this.state.meno,this.state.priezvisko,this.state.email,this.state.password);
     //To be done:check for empty values before hitting submit
     var self = this;
