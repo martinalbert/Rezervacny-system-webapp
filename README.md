@@ -15,7 +15,7 @@ docker-compose up
 After docker container will successfully run.\
 There is a [simple react app](http://localhost:3006) on port `3006` communicating with RESP API on port `3000`.
 
-### available logins:
+### Available logins:
 
 username: `lor0001`\
 password: `loremipsum`
@@ -31,11 +31,11 @@ Authorization: Bearer OAUTH-TOKEN
 Content-Type: application/json
 ```
 
-### available requests:
+### Available requests:
 
 `GET`, `POST`, `PATCH`, `DELETE`
 
-### available routes:
+### Available routes:
 
 `/ubytovany`\
 `/rezervacie`\
@@ -69,8 +69,18 @@ These can be used alone like this:
                 "type": "GET",
                 "url": "http://localhost:3000/{route}/{id}"
             }
-        },
-        // or:
+        }
+    ]
+
+}
+```
+
+or
+
+```json
+{
+    "count": "number of objects",
+    "route": [
         {
             "returnedObject": {
                 "_id": "id",
@@ -87,7 +97,7 @@ These can be used alone like this:
 }
 ```
 
-or can be used in conjunction with identifiers to retrieve the metadata for that identifier:
+Or can be used in conjunction with identifiers to retrieve the metadata for that identifier:
 
 | route                         | description                                         |
 |:------------------------------|:----------------------------------------------------|
@@ -115,7 +125,7 @@ or can be used in conjunction with identifiers to retrieve the metadata for that
 }
 ```
 
-other routes:
+#### Other routes:
 
 | route                | description                       |
 |:---------------------|:----------------------------------|
