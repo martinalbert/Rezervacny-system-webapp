@@ -23,7 +23,7 @@ There is a [simple react app](http://localhost:3006) on port 3006 communicating 
 /budovy\
 /objednavky\
 /poradovniky\
-/zamestnanci\
+/zamestnanci
 
 ### available logins:
 
