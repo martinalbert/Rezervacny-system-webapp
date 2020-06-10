@@ -8,6 +8,10 @@ services:
         volumes: 
             - ./server:/usr/src/app/server
             - /usr/src/app/server/node_modules/
+        environment: 
+            - JWT_KEY=shhhhh
+            - MONGO_ATLAS_USER=dbAdmin
+            - MONGO_ATLAS_PW=V3ZLrGggjsKCGWBi
         ports: 
             - 3000:3000
     
