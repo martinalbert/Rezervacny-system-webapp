@@ -1,0 +1,23 @@
+version: '3'
+
+services: 
+    server:
+        container_name: rs-server
+        restart: always
+        build: ./server
+        volumes: 
+            - ./server:/usr/src/app/server
+            - /usr/src/app/server/node_modules/
+        ports: 
+            - 3000:3000
+    
+    webapp:
+        container_name: rs-web-app
+        restart: always
+        build: ./web_client
+        volumes: 
+            - ./web_client:/usr/src/app/web_client
+        ports: 
+            - 3006:3006
+        depends_on: 
+            - server
