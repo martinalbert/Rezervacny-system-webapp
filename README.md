@@ -25,5 +25,6 @@ After docker container will successfully run. There is a [simple react app](http
 /zamestnanci
 
 ### available logins:
+
 username: lor0001
 password: loremipsum
