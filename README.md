@@ -1,4 +1,5 @@
 # Rezervacny-system-webapp
+
 Webová aplikácia pre VIS projekt
 
 Check `documentation.pdf` for more info about architecture.\
@@ -47,15 +48,15 @@ Content-Type: application/json
 
 These can be used alone like this:
 
-| route         | description                            |
-|:--------------|:---------------------------------------|
-| `/ubytovany`  | returns an object of all residents     | 
-| `/rezervacie` | returns an object of all reservations  |
-| `/izby`       | returns an object of all rooms         |
-| `/budovy`     | returns an object of all buildings     |
-| `/objednavky` | returns an object of all orders        |
-| `/poradovniky`| returns an object of all waiting lists |
-| `/zamestnanci`| returns an object of all employees     |
+| route          | description                            |
+| :------------- | :------------------------------------- |
+| `/ubytovany`   | returns an object of all residents     |
+| `/rezervacie`  | returns an object of all reservations  |
+| `/izby`        | returns an object of all rooms         |
+| `/budovy`      | returns an object of all buildings     |
+| `/objednavky`  | returns an object of all orders        |
+| `/poradovniky` | returns an object of all waiting lists |
+| `/zamestnanci` | returns an object of all employees     |
 
 #### Response example:
 
@@ -71,7 +72,6 @@ These can be used alone like this:
             }
         }
     ]
-
 }
 ```
 
@@ -93,21 +93,20 @@ or
             }
         }
     ]
-
 }
 ```
 
 Or can be used in conjunction with identifiers to retrieve the metadata for that identifier:
 
-| route                         | description                                         |
-|:------------------------------|:----------------------------------------------------|
-| `/ubytovany/{ubytovanyID}`    | returns a resident represented by specified ID      |
-| `/rezervacie/{rezervaciaID}`  | returns a reservation represented by specified ID   |
-| `/izby/{izbaID}`              | returns a room represented by specified ID          |
-| `/budovy/{budovaID}`          | returns a building represented by specified ID      |
-| `/objednavky/{objednavkaID}`  | returns an order represented by specified ID        |
-| `/poradovniky/{poradovnikID}` | returns a waiting list represented by specified ID  |
-| `/zamestnanci/{zamestnanecID}`| returns an employee represented by specified ID     |
+| route                          | description                                        |
+| :----------------------------- | :------------------------------------------------- |
+| `/ubytovany/{ubytovanyID}`     | returns a resident represented by specified ID     |
+| `/rezervacie/{rezervaciaID}`   | returns a reservation represented by specified ID  |
+| `/izby/{izbaID}`               | returns a room represented by specified ID         |
+| `/budovy/{budovaID}`           | returns a building represented by specified ID     |
+| `/objednavky/{objednavkaID}`   | returns an order represented by specified ID       |
+| `/poradovniky/{poradovnikID}`  | returns a waiting list represented by specified ID |
+| `/zamestnanci/{zamestnanecID}` | returns an employee represented by specified ID    |
 
 #### Response example:
 
@@ -127,9 +126,9 @@ Or can be used in conjunction with identifiers to retrieve the metadata for that
 
 #### Other routes:
 
-| route                | description                       |
-|:---------------------|:----------------------------------|
-| `/ubytovany/login`   | returns an object of all residents |
+| route                | description                           |
+| :------------------- | :------------------------------------ |
+| `/ubytovany/login`   | returns an object of all residents    |
 | `/rezervacie/signup` | returns an object of all reservations |
 
 #### Login Response example:
