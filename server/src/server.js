@@ -14,6 +14,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     console.log("we're connected");
     server.listen(port, (err) => {
+        if (err) console.error(err.message)
         console.log('server started on port: ' + port);
     });
 })
